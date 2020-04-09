@@ -1,9 +1,19 @@
 import React from "react";
-import logo from "./logo.svg";
+
 import "./App.css";
 
-function App() {
-  return <div className="App">hi</div>;
-}
+// Components
+import { PageWrapper } from "./App.styles";
+
+// Pages
+import Home from "./pages/Home";
+
+const App = () => {
+  return (
+    <PageWrapper>
+      <Home />
+    </PageWrapper>
+  );
+};
 
 export default App;
