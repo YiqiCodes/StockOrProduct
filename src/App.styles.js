@@ -7,3 +7,9 @@ export const PageWrapper = styled.div`
   justify-content: center;
   min-height: 100vh;
 `;
+
+export const TextOutputWrapper = styled.div`
+  text-align: center;
+  font-weight: 100;
+  font-size: medium;
+`;

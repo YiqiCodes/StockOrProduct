@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import { Grommet, Select } from "grommet";
 import axios from "axios";
 
+// styles
+import { TextOutputWrapper } from "../App.styles";
+import appleLogo from "../../src/assets/img/AppleLogo.jpg";
+
 const ApplePhone = () => {
   const [applePrice, setApplePrice] = useState(0);
   const [originalApplePrice, setOriginalApplePrice] = useState(0);
@@ -62,9 +66,30 @@ const ApplePhone = () => {
   return (
     <>
       <Grommet>
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <form onSubmit={handleSubmit}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <img
+            style={{ maxHeight: "25%", maxWidth: "25%", marginBottom: "1rem" }}
+            src={appleLogo}
+            alt=""
+          ></img>
+          <form
+            onSubmit={handleSubmit}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
             <Select
+              placeholder="Year of Purchase"
               options={[
                 2019,
                 2018,
@@ -81,6 +106,15 @@ const ApplePhone = () => {
               onChange={(year) => handleYearChange(year)}
             />
             <input
+              style={{
+                margin: "1rem",
+                minWidth: "100%",
+                minHeight: "100%",
+                border: "solid 2px black",
+                borderRadius: "8px",
+                textAlign: "center",
+                fontSize: "larger",
+              }}
               type="number"
               placeholder="cost"
               value={phoneCost}
@@ -88,11 +122,22 @@ const ApplePhone = () => {
             />
             <input type="submit" value="Submit" />
           </form>
-          <div>Current Price: {applePrice}</div>
-          <div>Original Price: {originalApplePrice}</div>
-          <div>Could have bought: {shares} Shares</div>
-          <div>Now worth: {currentValue} </div>
-          <div>Net Potential Gain(Loss): {gainLoss} </div>
+          <TextOutputWrapper>
+            Current Stock Price: {applePrice}
+          </TextOutputWrapper>
+          <TextOutputWrapper>
+            Stock Price in {yearBought}: {originalApplePrice}
+          </TextOutputWrapper>
+          <TextOutputWrapper>
+            Could Have Bought: {shares} Shares
+          </TextOutputWrapper>
+          <TextOutputWrapper>
+            Those Shares Are Now Worth: {currentValue}
+          </TextOutputWrapper>
+          <TextOutputWrapper>
+            If you bought Stock instead of the Product, <br></br>
+            your Gain(Loss) would be: {gainLoss}
+          </TextOutputWrapper>
         </div>
       </Grommet>
     </>
