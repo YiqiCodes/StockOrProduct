@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import ApplePhone from "./ApplePhone";
-import GooglePhone from "./GooglePhone"
-import MUButton from "@material-ui/core/Button";
+import GooglePhone from "./GooglePhone";
 import SamsungPhone from "./SamsungPhone";
+import MUButton from "@material-ui/core/Button";
 
 const WhichPhone = () => {
   const [selectedPhone, setSelectedPhone] = useState(0);
@@ -167,7 +167,7 @@ const WhichPhone = () => {
                 background: button1.color,
                 marginRight: "1em",
                 marginLeft: "1em",
-                marginTop: "4px",
+                marginTop: "1em",
               }}
               onMouseLeave={() =>
                 setButton1({
@@ -200,88 +200,106 @@ const WhichPhone = () => {
           </div>
         </>
       ) : null}
-       {selectedPhone === 2 ? (
+      {selectedPhone === 2 ? (
         <>
-          <GooglePhone></GooglePhone>
-          <MUButton
-            className="selected-samsung-phone-button"
+          <div
             style={{
-              ...style,
-              background: button1.color,
-              marginRight: "1em",
-              marginLeft: "1em",
-              marginTop: "4px",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
             }}
-            onMouseLeave={() =>
-              setButton1({
-                ...button1,
-                color: "linear-gradient(45deg, #ec407a 30%, #f48fb1 90%)",
-              })
-            }
-            onMouseOver={() =>
-              setButton1({
-                ...button1,
-                color: "linear-gradient(45deg, #f06292 30%, #f8bbd0 90%)",
-              })
-            }
-            onMouseUp={() =>
-              setButton1({
-                ...button1,
-                x: 0,
-              })
-            }
-            onMouseDown={() =>
-              setButton1({
-                ...button1,
-                x: 2,
-              })
-            }
-            onClick={() => setSelectedPhone(0)}
           >
-            Go Back
-          </MUButton>
+            <GooglePhone></GooglePhone>
+            <MUButton
+              className="selected-samsung-phone-button"
+              style={{
+                ...style,
+                background: button1.color,
+                marginRight: "1em",
+                marginLeft: "1em",
+                marginTop: "1em",
+              }}
+              onMouseLeave={() =>
+                setButton1({
+                  ...button1,
+                  color: "linear-gradient(45deg, #ec407a 30%, #f48fb1 90%)",
+                })
+              }
+              onMouseOver={() =>
+                setButton1({
+                  ...button1,
+                  color: "linear-gradient(45deg, #f06292 30%, #f8bbd0 90%)",
+                })
+              }
+              onMouseUp={() =>
+                setButton1({
+                  ...button1,
+                  x: 0,
+                })
+              }
+              onMouseDown={() =>
+                setButton1({
+                  ...button1,
+                  x: 2,
+                })
+              }
+              onClick={() => setSelectedPhone(0)}
+            >
+              Go Back
+            </MUButton>
+          </div>
         </>
       ) : null}
       {selectedPhone === 3 ? (
         <>
-          <SamsungPhone></SamsungPhone>
-          <MUButton
-            className="selected-samsung-phone-button"
+          <div
             style={{
-              ...style,
-              background: button1.color,
-              marginRight: "1em",
-              marginLeft: "1em",
-              marginTop: "4px",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
             }}
-            onMouseLeave={() =>
-              setButton1({
-                ...button1,
-                color: "linear-gradient(45deg, #ec407a 30%, #f48fb1 90%)",
-              })
-            }
-            onMouseOver={() =>
-              setButton1({
-                ...button1,
-                color: "linear-gradient(45deg, #f06292 30%, #f8bbd0 90%)",
-              })
-            }
-            onMouseUp={() =>
-              setButton1({
-                ...button1,
-                x: 0,
-              })
-            }
-            onMouseDown={() =>
-              setButton1({
-                ...button1,
-                x: 2,
-              })
-            }
-            onClick={() => setSelectedPhone(0)}
           >
-            Go Back
-          </MUButton>
+            <SamsungPhone></SamsungPhone>
+            <MUButton
+              className="selected-samsung-phone-button"
+              style={{
+                ...style,
+                background: button1.color,
+                marginRight: "1em",
+                marginLeft: "1em",
+                marginTop: "1em",
+              }}
+              onMouseLeave={() =>
+                setButton1({
+                  ...button1,
+                  color: "linear-gradient(45deg, #ec407a 30%, #f48fb1 90%)",
+                })
+              }
+              onMouseOver={() =>
+                setButton1({
+                  ...button1,
+                  color: "linear-gradient(45deg, #f06292 30%, #f8bbd0 90%)",
+                })
+              }
+              onMouseUp={() =>
+                setButton1({
+                  ...button1,
+                  x: 0,
+                })
+              }
+              onMouseDown={() =>
+                setButton1({
+                  ...button1,
+                  x: 2,
+                })
+              }
+              onClick={() => setSelectedPhone(0)}
+            >
+              Go Back
+            </MUButton>
+          </div>
         </>
       ) : null}
     </>

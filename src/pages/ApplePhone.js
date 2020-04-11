@@ -3,7 +3,7 @@ import { Grommet, Select } from "grommet";
 import axios from "axios";
 
 // styles
-import { TextOutputWrapper } from "../App.styles";
+import { TextOutPutContainer, TextOutputIndividual } from "../App.styles";
 import appleLogo from "../../src/assets/img/AppleLogo.jpg";
 
 const ApplePhone = () => {
@@ -14,6 +14,7 @@ const ApplePhone = () => {
   const [shares, setShares] = useState(0);
   const [currentValue, setCurrentValue] = useState(0);
   const [gainLoss, setGainLoss] = useState(0);
+  const [isClicked, setIsClicked] = useState(0);
 
   let stockPrice;
   const getStockPrice = (stockRecords) => {
@@ -42,6 +43,7 @@ const ApplePhone = () => {
     setCurrentValue(currentWorth);
     setShares(sharesBought);
     setGainLoss(currentGain);
+    setIsClicked(1);
     event.preventDefault();
   };
 
@@ -120,24 +122,38 @@ const ApplePhone = () => {
               value={phoneCost}
               onChange={handlePhoneChange}
             />
-            <input type="submit" value="Submit" />
+            <input
+              style={{
+                minHeight: "2rem",
+                minWidth: "5rem",
+                border: "2px solid black",
+                background: "white",
+                borderRadius: "5px",
+              }}
+              type="submit"
+              value="Submit"
+            />
           </form>
-          <TextOutputWrapper>
-            Current Stock Price: {applePrice}
-          </TextOutputWrapper>
-          <TextOutputWrapper>
-            Stock Price in {yearBought}: {originalApplePrice}
-          </TextOutputWrapper>
-          <TextOutputWrapper>
-            Could Have Bought: {shares} Shares
-          </TextOutputWrapper>
-          <TextOutputWrapper>
-            Those Shares Are Now Worth: {currentValue}
-          </TextOutputWrapper>
-          <TextOutputWrapper>
-            If you bought Stock instead of the Product, <br></br>
-            your Gain(Loss) would be: {gainLoss}
-          </TextOutputWrapper>
+          {isClicked === 1 ? (
+            <TextOutPutContainer>
+              <TextOutputIndividual>
+                Current Stock Price: {applePrice}
+              </TextOutputIndividual>
+              <TextOutputIndividual>
+                Stock Price in {yearBought}: {originalApplePrice}
+              </TextOutputIndividual>
+              <TextOutputIndividual>
+                Could Have Bought: {shares} Shares
+              </TextOutputIndividual>
+              <TextOutputIndividual>
+                Those Shares Are Now Worth: {currentValue}
+              </TextOutputIndividual>
+              <TextOutputIndividual>
+                If you bought Stock instead of the Product, <br></br>
+                your Gain(Loss) would be: {gainLoss}
+              </TextOutputIndividual>
+            </TextOutPutContainer>
+          ) : null}
         </div>
       </Grommet>
     </>
