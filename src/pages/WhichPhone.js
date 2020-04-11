@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ApplePhone from "./ApplePhone";
 import GooglePhone from "./GooglePhone"
 import MUButton from "@material-ui/core/Button";
+import SamsungPhone from "./SamsungPhone";
 
 const WhichPhone = () => {
   const [selectedPhone, setSelectedPhone] = useState(0);
@@ -202,6 +203,48 @@ const WhichPhone = () => {
        {selectedPhone === 2 ? (
         <>
           <GooglePhone></GooglePhone>
+          <MUButton
+            className="selected-samsung-phone-button"
+            style={{
+              ...style,
+              background: button1.color,
+              marginRight: "1em",
+              marginLeft: "1em",
+              marginTop: "4px",
+            }}
+            onMouseLeave={() =>
+              setButton1({
+                ...button1,
+                color: "linear-gradient(45deg, #ec407a 30%, #f48fb1 90%)",
+              })
+            }
+            onMouseOver={() =>
+              setButton1({
+                ...button1,
+                color: "linear-gradient(45deg, #f06292 30%, #f8bbd0 90%)",
+              })
+            }
+            onMouseUp={() =>
+              setButton1({
+                ...button1,
+                x: 0,
+              })
+            }
+            onMouseDown={() =>
+              setButton1({
+                ...button1,
+                x: 2,
+              })
+            }
+            onClick={() => setSelectedPhone(0)}
+          >
+            Go Back
+          </MUButton>
+        </>
+      ) : null}
+      {selectedPhone === 3 ? (
+        <>
+          <SamsungPhone></SamsungPhone>
           <MUButton
             className="selected-samsung-phone-button"
             style={{
