@@ -4,7 +4,7 @@ import axios from "axios";
 
 // styles
 import { TextOutPutContainer, TextOutputIndividual } from "../App.styles";
-import appleLogo from "../../src/assets/img/AppleLogo.jpg";
+import appleLogo from "../../src/assets/img/AppleLogo.svg";
 
 const ApplePhone = () => {
   const [applePrice, setApplePrice] = useState(0);
@@ -112,7 +112,8 @@ const ApplePhone = () => {
                 margin: "1rem",
                 minWidth: "100%",
                 minHeight: "100%",
-                border: "solid 2px black",
+                border: "solid 2px #f47fb1",
+                background: "#c6c6c7",
                 borderRadius: "8px",
                 textAlign: "center",
                 fontSize: "larger",
@@ -126,8 +127,8 @@ const ApplePhone = () => {
               style={{
                 minHeight: "2rem",
                 minWidth: "5rem",
-                border: "2px solid black",
-                background: "white",
+                border: "solid 2px #f47fb1",
+                background: "#c6c6c7",
                 borderRadius: "5px",
               }}
               type="submit"
@@ -137,20 +138,21 @@ const ApplePhone = () => {
           {isClicked === 1 ? (
             <TextOutPutContainer>
               <TextOutputIndividual>
-                Current Stock Price: {applePrice}
+                Current Stock Price: ${applePrice}
               </TextOutputIndividual>
               <TextOutputIndividual>
-                Stock Price in {yearBought}: {originalApplePrice}
+                Stock Price in {yearBought}: ${originalApplePrice}
               </TextOutputIndividual>
               <TextOutputIndividual>
-                Could Have Bought: {shares} Shares
+                Could Have Bought: ${shares} Shares
               </TextOutputIndividual>
               <TextOutputIndividual>
-                Those Shares Are Now Worth: {currentValue}
+                Those Shares Are Now Worth: ${currentValue}
               </TextOutputIndividual>
+              <br></br>
               <TextOutputIndividual>
-                If you bought Stock instead of the Product, <br></br>
-                your Gain(Loss) would be: {gainLoss}
+                If you had bought Stock instead of Product, <br></br>
+                your Gain(Loss) would be: ${gainLoss}
               </TextOutputIndividual>
             </TextOutPutContainer>
           ) : null}
