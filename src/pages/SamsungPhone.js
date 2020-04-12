@@ -89,7 +89,7 @@ const SamsungPhone = () => {
             placeholder="Enter Year of Purchase"
             onChange={handleYearChange}
           ></CostYearInput>
-          />
+
           <CostYearInput
             style={{ borderColor: "#6170fb" }}
             placeholder="Enter Purchase Cost"

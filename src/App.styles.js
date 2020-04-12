@@ -1,6 +1,9 @@
 import styled, { keyframes } from "styled-components";
 
-export const PageWrapper = styled.div``;
+export const PageWrapper = styled.div`
+  min-height: 100vh;
+  max-height: 100vh;
+`;
 
 // Which Phone Styles
 const animationName = keyframes`{

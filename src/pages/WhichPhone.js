@@ -32,7 +32,7 @@ const WhichPhone = () => {
 
   const styledButton = {
     background: "linear-gradient(45deg, #ec407a 30%, #f48fb1 90%)",
-    borderRadius: 5,
+    borderRadius: 12,
     border: 0,
     color: "white",
     height: 40,
