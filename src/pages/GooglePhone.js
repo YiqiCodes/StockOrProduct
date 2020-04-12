@@ -2,7 +2,15 @@ import React, { useState } from "react";
 import axios from "axios";
 
 // styles
-import { TextOutPutContainer, TextOutputIndividual } from "../App.styles";
+import {
+  TextOutPutContainer,
+  TextOutputIndividual,
+  CostYearInput,
+  SubmitButton,
+  PhoneLogo,
+  PhoneForm,
+  PhoneContainerDiv,
+} from "../App.styles";
 import googleLogo from "../../src/assets/img/GoogleLogo.png";
 
 const GooglePhone = () => {
@@ -68,77 +76,21 @@ const GooglePhone = () => {
 
   return (
     <>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <img
-          style={{
-            maxHeight: "25%",
-            maxWidth: "25%",
-            marginBottom: "1rem",
-            marginTop: "1rem",
-          }}
-          src={googleLogo}
-          alt=""
-        ></img>
-        <form
-          onSubmit={handleSubmit}
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <input
-            style={{
-              margin: "1rem",
-              minWidth: "100%",
-              minHeight: "100%",
-              border: "solid 2px #f6f1c1",
-              borderRadius: "8px",
-              background: "#e9e9e9",
-              textAlign: "center",
-              fontSize: "larger",
-            }}
+      <PhoneContainerDiv>
+        <PhoneLogo src={googleLogo} alt=""></PhoneLogo>
+        <PhoneForm onSubmit={handleSubmit}>
+          <CostYearInput
             placeholder="Enter Year of Purchase"
             onChange={handleYearChange}
           />
-          <input
-            style={{
-              margin: "1rem",
-              minWidth: "100%",
-              minHeight: "100%",
-              border: "solid 2px #f6f1c1",
-              borderRadius: "8px",
-              background: "#e9e9e9",
-              textAlign: "center",
-              fontSize: "larger",
-            }}
+          <CostYearInput
             placeholder="Enter Purchase Cost"
             onChange={handlePhoneChange}
           />
-          <button
-            style={{
-              minHeight: "2rem",
-              minWidth: "5rem",
-              border: "solid 2px black",
-              background: "#f6f1c1",
-              borderRadius: "5px",
-              margin: "1rem",
-              color: "black",
-            }}
-            type="submit"
-            value="Submit"
-          >
+          <SubmitButton type="submit" value="Submit">
             Submit
-          </button>
-        </form>
+          </SubmitButton>
+        </PhoneForm>
         {isClicked === 1 ? (
           <TextOutPutContainer>
             <TextOutputIndividual>
@@ -170,7 +122,7 @@ const GooglePhone = () => {
             </TextOutputIndividual>
           </TextOutPutContainer>
         ) : null}
-      </div>
+      </PhoneContainerDiv>
     </>
   );
 };
