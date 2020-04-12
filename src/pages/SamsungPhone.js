@@ -38,6 +38,13 @@ const SamsungPhone = () => {
     setPhoneCostSamsung(event.target.value);
   };
 
+  // let isEnabled = false;
+  // const errorHandler = (event) => {
+  //   console.log(event);
+  //   if (event.target.value >= 2009 && event.target.value <= 2019)
+  //     isEnabled = true;
+  // };
+
   const handleYearChange = (event) => {
     setYearBoughtSamsung(event.target.value);
   };
@@ -81,6 +88,7 @@ const SamsungPhone = () => {
             style={{ borderColor: "#6170fb" }}
             placeholder="Enter Year of Purchase"
             onChange={handleYearChange}
+          ></CostYearInput>
           />
           <CostYearInput
             style={{ borderColor: "#6170fb" }}
@@ -88,6 +96,7 @@ const SamsungPhone = () => {
             onChange={handlePhoneChange}
           />
           <SubmitButton
+            // disabled={!isEnabled}
             style={{ background: "#6170fb", color: "white" }}
             type="submit"
             value="Submit"
