@@ -18,6 +18,7 @@ export const WhichPhoneWrapper = styled.div`
   z-index: -1;
   min-width: 100vw;
   min-height: 100vh;
+  max-height: 100vh;
   background: linear-gradient(270deg, #000000, #ffffff);
   color: white;
   background-size: 400% 400%;
