@@ -14,19 +14,20 @@ import {
 import googleLogo from "../../src/assets/img/GoogleLogo.png";
 
 const GooglePhone = () => {
-  const [googlePrice, setgooglePrice] = useState(0);
+  const [googlePrice, setGooglePrice] = useState(0);
   const [originalGooglePrice, setOriginalGooglePrice] = useState(0);
-  const [phoneCost, setPhoneCost] = useState(0);
-  const [yearBought, setYearBought] = useState(0);
-  const [shares, setShares] = useState(0);
-  const [currentValue, setCurrentValue] = useState(0);
-  const [gainLoss, setGainLoss] = useState(0);
-  const [isClicked, setIsClicked] = useState(0);
+  const [googlePhoneCost, setGooglePhoneCost] = useState(0);
+  const [yearGoogleBought, setGoogleYearBought] = useState(0);
+  const [sharesGoogle, setGoogleShares] = useState(0);
+  const [currentGoogleValue, setGoogleCurrentValue] = useState(0);
+  const [gainLossGoogle, setGainLossGoogle] = useState(0);
+  const [isClickedGoogle, setIsClickedGoogleGoogle] = useState(0);
 
-  let stockPrice;
+  // NEED TO REFACTOR THIS
   const getStockPrice = (stockRecords) => {
+    let stockPrice;
     for (let stockYear of stockRecords) {
-      if (stockYear.date.includes(yearBought.toString())) {
+      if (stockYear.date.includes(yearGoogleBought.toString())) {
         stockPrice = stockYear["Stock Price"];
         break;
       }
@@ -35,31 +36,31 @@ const GooglePhone = () => {
   };
 
   const handlePhoneChange = (event) => {
-    setPhoneCost(event.target.value);
+    setGooglePhoneCost(event.target.value);
   };
 
   // net to set error handler here
   const handleYearChange = (event) => {
-    // if (event.target.value <= 2019 && event.target.value >= 2009)
-    setYearBought(event.target.value);
+    // if (event.target.value <= 2019 && event.target.value >= 20Google09)
+    setGoogleYearBought(event.target.value);
   };
 
   const handleSubmit = (event) => {
-    let sharesBought = (phoneCost / originalGooglePrice).toFixed(2);
+    let sharesBought = (googlePhoneCost / originalGooglePrice).toFixed(2);
     let currentWorth = (sharesBought * googlePrice).toFixed(2);
-    let currentGain = (currentWorth - phoneCost).toFixed(2);
+    let currentGain = (currentWorth - googlePhoneCost).toFixed(2);
 
-    setCurrentValue(currentWorth);
-    setShares(sharesBought);
-    setGainLoss(currentGain);
-    setIsClicked(1);
+    setGoogleCurrentValue(currentWorth);
+    setGoogleShares(sharesBought);
+    setGainLossGoogle(currentGain);
+    setIsClickedGoogleGoogle(1);
     event.preventDefault();
   };
 
   axios
     .get("https://financialmodelingprep.com/api/v3/company/profile/GOOGL")
     .then((response) => {
-      setgooglePrice(response.data.profile.price);
+      setGooglePrice(response.data.profile.price);
     })
     .catch((error) => {
       console.log(error);
@@ -91,33 +92,33 @@ const GooglePhone = () => {
             Submit
           </SubmitButton>
         </PhoneForm>
-        {isClicked === 1 ? (
+        {isClickedGoogle === 1 ? (
           <TextOutPutContainer>
             <TextOutputIndividual>
               Current Stock Price: ${googlePrice}
             </TextOutputIndividual>
             <TextOutputIndividual>
-              Stock Price in {yearBought}: ${originalGooglePrice}
+              Stock Price in {yearGoogleBought}: ${originalGooglePrice}
             </TextOutputIndividual>
             <br></br>
             <TextOutputIndividual>
-              You Could Have Bought: {shares} Shares
+              You Could Have Bought: {sharesGoogle} Shares
             </TextOutputIndividual>
             <TextOutputIndividual>
-              Those Shares Are Now Worth: ${currentValue}
+              Those Shares Are Now Worth: ${currentGoogleValue}
             </TextOutputIndividual>
             <br></br>
             <TextOutputIndividual>
               If you bought Stock instead of the phone, <br></br>
-              your Gain(Loss) would be: ${gainLoss}
+              your Gain(Loss) would be: ${gainLossGoogle}
             </TextOutputIndividual>
             <br></br>
             <TextOutputIndividual
               style={{ fontWeight: 200, fontSize: "large" }}
             >
-              {gainLoss > 0
+              {gainLossGoogle > 0
                 ? `You would have made more money buying stock. Was your
-                  phone worth $${gainLoss}?`
+                  phone worth $${gainLossGoogle}?`
                 : "Seems like you made the right choice buying the phone!"}
             </TextOutputIndividual>
           </TextOutPutContainer>
