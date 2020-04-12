@@ -280,7 +280,7 @@ const WhichPhone = () => {
                 background: button2.color,
                 marginRight: "1em",
                 marginLeft: "1em",
-                marginTop: "1em",
+                marginBottom: "1em",
                 minHeight: "40px",
                 color: "black",
               }}

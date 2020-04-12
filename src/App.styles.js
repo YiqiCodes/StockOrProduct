@@ -41,7 +41,7 @@ export const ApplePhoneWrapper = styled.div`
   flex-direction: column;
   flex: 1;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   position: absolute;
   z-index: -1;
   min-width: 100vw;
@@ -57,7 +57,7 @@ export const GooglePhoneWrapper = styled.div`
   flex-direction: column;
   flex: 1;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   position: absolute;
   z-index: -1;
   min-width: 100vw;
@@ -73,7 +73,7 @@ export const SamsungPhoneWrapper = styled.div`
   flex-direction: column;
   flex: 1;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   position: absolute;
   z-index: -1;
   min-width: 100vw;
