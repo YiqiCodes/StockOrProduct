@@ -39,7 +39,7 @@ const WhichPhone = () => {
     width: 163,
     padding: "0 30px",
     boxShadow: "0 3px 5px 2px #4a148c 30%",
-    minHeight: "15vh",
+    minHeight: "20vh",
     marginRight: "1em",
     marginLeft: "1em",
     marginTop: "10px",

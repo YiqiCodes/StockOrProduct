@@ -85,6 +85,7 @@ export const WhichPhoneLogo = styled.img`
 `;
 
 export const HeaderText = styled.div`
+  margin-bottom: 1rem;
   font-weight: 500;
   font-size: larger;
 `;
