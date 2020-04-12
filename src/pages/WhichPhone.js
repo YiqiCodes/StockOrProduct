@@ -3,10 +3,15 @@ import ApplePhone from "./ApplePhone";
 import GooglePhone from "./GooglePhone";
 import SamsungPhone from "./SamsungPhone";
 import MUButton from "@material-ui/core/Button";
-import { WhichPhoneWrapper } from "../App.styles";
-import appleLogo from "../../src/assets/img/AppleLogo.jpg";
-import googleLogo from "../../src/assets/img/GoogleLogo.jpg";
-import samsungLogo from "../../src/assets/img/SamsungLogo.jpg";
+import {
+  WhichPhoneWrapper,
+  ApplePhoneWrapper,
+  GooglePhoneWrapper,
+  SamsungPhoneWrapper,
+} from "../App.styles";
+import appleLogo from "../../src/assets/img/AppleLogo.svg";
+import googleLogo from "../../src/assets/img/GoogleLogo.png";
+import samsungLogo from "../../src/assets/img/Samsungv2.png";
 
 const WhichPhone = () => {
   const [selectedPhone, setSelectedPhone] = useState(0);
@@ -86,7 +91,8 @@ const WhichPhone = () => {
                   background: button1.color,
                   marginRight: "1em",
                   marginLeft: "1em",
-                  marginTop: "4px",
+                  marginTop: "10px",
+                  marginBottom: "10px",
                 }}
                 onMouseLeave={() =>
                   setButton1({
@@ -131,7 +137,8 @@ const WhichPhone = () => {
                   background: button2.color,
                   marginRight: "1em",
                   marginLeft: "1em",
-                  marginTop: "4px",
+                  marginTop: "10px",
+                  marginBottom: "10px",
                 }}
                 onMouseLeave={() =>
                   setButton2({
@@ -175,7 +182,8 @@ const WhichPhone = () => {
                   background: button3.color,
                   marginRight: "1em",
                   marginLeft: "1em",
-                  marginTop: "4px",
+                  marginTop: "10px",
+                  marginBottom: "10px",
                 }}
                 onMouseLeave={() =>
                   setButton3({
@@ -218,14 +226,7 @@ const WhichPhone = () => {
       ) : null}
       {selectedPhone === 1 ? (
         <>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
+          <ApplePhoneWrapper>
             <ApplePhone></ApplePhone>
             <MUButton
               className="selected-samsung-phone-button"
@@ -235,6 +236,7 @@ const WhichPhone = () => {
                 marginRight: "1em",
                 marginLeft: "1em",
                 marginTop: "1em",
+                minHeight: "40px",
               }}
               onMouseLeave={() =>
                 setButton1({
@@ -264,28 +266,23 @@ const WhichPhone = () => {
             >
               Go Back
             </MUButton>
-          </div>
+          </ApplePhoneWrapper>
         </>
       ) : null}
       {selectedPhone === 2 ? (
         <>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
+          <GooglePhoneWrapper>
             <GooglePhone></GooglePhone>
             <MUButton
               className="selected-samsung-phone-button"
               style={{
                 ...style,
-                background: button1.color,
+                background: button2.color,
                 marginRight: "1em",
                 marginLeft: "1em",
                 marginTop: "1em",
+                minHeight: "40px",
+                color: "black",
               }}
               onMouseLeave={() =>
                 setButton1({
@@ -315,28 +312,22 @@ const WhichPhone = () => {
             >
               Go Back
             </MUButton>
-          </div>
+          </GooglePhoneWrapper>
         </>
       ) : null}
       {selectedPhone === 3 ? (
         <>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
+          <SamsungPhoneWrapper>
             <SamsungPhone></SamsungPhone>
             <MUButton
               className="selected-samsung-phone-button"
               style={{
-                ...style,
-                background: button1.color,
+                ...style3,
+                background: button3.color,
                 marginRight: "1em",
                 marginLeft: "1em",
                 marginTop: "1em",
+                minHeight: "40px",
               }}
               onMouseLeave={() =>
                 setButton1({
@@ -366,7 +357,7 @@ const WhichPhone = () => {
             >
               Go Back
             </MUButton>
-          </div>
+          </SamsungPhoneWrapper>
         </>
       ) : null}
     </>
