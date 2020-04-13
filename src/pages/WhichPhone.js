@@ -52,7 +52,15 @@ const WhichPhone = () => {
         <>
           <WhichPhoneWrapper>
             <PhoneSelectorContainer>
-              <HeaderText>What brand is your Phone?</HeaderText>
+              <HeaderText>
+                Should you have bought your phone or stock from your phone
+                company?
+                <br></br>
+                Let's find out!
+                <br></br>
+                <br></br>
+                What brand is your Phone?
+              </HeaderText>
               <MUButton
                 style={{
                   ...styledButton,

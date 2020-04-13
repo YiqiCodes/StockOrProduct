@@ -22,6 +22,7 @@ const SamsungPhone = () => {
   const [currentValueSamsung, setCurrentValueSamsung] = useState(0);
   const [gainLossSamsung, setGainLossSamsung] = useState(0);
   const [isClickedSamsung, setIsClickedSamsung] = useState(0);
+  const [isValid, setIsValid] = useState(0);
 
   const getStockPrice = (stockRecords) => {
     let stockPrice;
@@ -38,27 +39,26 @@ const SamsungPhone = () => {
     setPhoneCostSamsung(event.target.value);
   };
 
-  // let isEnabled = false;
-  // const errorHandler = (event) => {
-  //   console.log(event);
-  //   if (event.target.value >= 2009 && event.target.value <= 2019)
-  //     isEnabled = true;
-  // };
-
   const handleYearChange = (event) => {
     setYearBoughtSamsung(event.target.value);
   };
 
   const handleSubmit = (event) => {
-    let sharesBought = (phoneCostSamsung / originalSamsungPrice).toFixed(2);
-    let currentWorth = (sharesBought * samsungPrice).toFixed(2);
-    let currentGain = (currentWorth - phoneCostSamsung).toFixed(2);
+    if (yearBoughtSamsung >= 2009 && yearBoughtSamsung <= 2019) {
+      let sharesBought = (phoneCostSamsung / originalSamsungPrice).toFixed(2);
+      let currentWorth = (sharesBought * samsungPrice).toFixed(2);
+      let currentGain = (currentWorth - phoneCostSamsung).toFixed(2);
 
-    setCurrentValueSamsung(currentWorth);
-    setSharesSamsung(sharesBought);
-    setGainLossSamsung(currentGain);
-    setIsClickedSamsung(1);
-    event.preventDefault();
+      setCurrentValueSamsung(currentWorth);
+      setSharesSamsung(sharesBought);
+      setGainLossSamsung(currentGain);
+      setIsClickedSamsung(1);
+      setIsValid(0);
+      event.preventDefault();
+    } else {
+      setIsValid(1);
+      event.preventDefault();
+    }
   };
 
   axios
@@ -89,7 +89,9 @@ const SamsungPhone = () => {
             placeholder="Enter Year of Purchase"
             onChange={handleYearChange}
           ></CostYearInput>
-
+          {isValid === 0 ? null : (
+            <div>Please enter a year between 2009-2019!</div>
+          )}
           <CostYearInput
             style={{ borderColor: "#6170fb" }}
             placeholder="Enter Purchase Cost"

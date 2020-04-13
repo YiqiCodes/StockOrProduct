@@ -23,6 +23,8 @@ const ApplePhone = () => {
   const [currentValueApple, setCurrentValueApple] = useState(0);
   const [gainLossApple, setGainLossApple] = useState(0);
   const [isClickedApple, setIsClickedApple] = useState(0);
+  const [isCostValid, setIsCostValid] = useState(true);
+  const [isYearValid, setIsYearValid] = useState(true);
 
   const getStockPrice = (stockRecords) => {
     let stockPrice;
@@ -44,15 +46,42 @@ const ApplePhone = () => {
   };
 
   const handleSubmit = (event) => {
-    let sharesBought = (phoneCostApple / originalApplePrice).toFixed(2);
-    let currentWorth = (sharesBought * applePrice).toFixed(2);
-    let currentGain = (currentWorth - phoneCostApple).toFixed(2);
+    if (
+      yearBoughtApple >= 2009 &&
+      yearBoughtApple <= 2019 &&
+      phoneCostApple > 0
+    ) {
+      let sharesBought = (phoneCostApple / originalApplePrice).toFixed(2);
+      let currentWorth = (sharesBought * applePrice).toFixed(2);
+      let currentGain = (currentWorth - phoneCostApple).toFixed(2);
 
-    setCurrentValueApple(currentWorth);
-    setSharesApple(sharesBought);
-    setGainLossApple(currentGain);
-    setIsClickedApple(1);
-    event.preventDefault();
+      setCurrentValueApple(currentWorth);
+      setSharesApple(sharesBought);
+      setGainLossApple(currentGain);
+      setIsClickedApple(1);
+      setIsCostValid(true);
+      setIsYearValid(true);
+      event.preventDefault();
+    } else if (
+      phoneCostApple <= 0 &&
+      yearBoughtApple >= 2009 &&
+      yearBoughtApple <= 2019
+    ) {
+      setIsCostValid(false);
+      setIsYearValid(true);
+      event.preventDefault();
+    } else if (
+      (yearBoughtApple < 2009 || yearBoughtApple > 2019) &&
+      phoneCostApple > 0
+    ) {
+      setIsCostValid(true);
+      setIsYearValid(false);
+      event.preventDefault();
+    } else {
+      setIsCostValid(false);
+      setIsYearValid(false);
+      event.preventDefault();
+    }
   };
 
   axios
@@ -83,11 +112,17 @@ const ApplePhone = () => {
             placeholder="Enter Year of Purchase"
             onChange={handleYearChange}
           />
+          {isYearValid === false ? (
+            <div>Please enter a year between 2009-2019!</div>
+          ) : null}
           <CostYearInput
             style={{ borderColor: "#f48fb1" }}
             placeholder="Enter Purchase Cost"
             onChange={handlePhoneChange}
           />
+          {isCostValid === false ? (
+            <div>Please enter a positive value!</div>
+          ) : null}
           <SubmitButton
             style={{
               background: "#f48fb1",

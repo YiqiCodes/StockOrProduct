@@ -19,7 +19,7 @@ export const WhichPhoneWrapper = styled.div`
   min-width: 100vw;
   min-height: 100vh;
   max-height: 100vh;
-  background: linear-gradient(270deg, #000000, #ffffff);
+  background: linear-gradient(270deg, #000000, #a3a3a3);
   color: white;
   background-size: 400% 400%;
   animation: ${animationName} 10s ease infinite;
@@ -35,7 +35,7 @@ export const ApplePhoneWrapper = styled.div`
   z-index: -1;
   min-width: 100vw;
   min-height: 100vh;
-  background: linear-gradient(270deg, #000000, #d8d8d8);
+  background: linear-gradient(270deg, #000000, #a3a3a3);
   color: white;
   background-size: 400% 400%;
   animation: ${animationName} 10s ease infinite;
@@ -51,7 +51,7 @@ export const GooglePhoneWrapper = styled.div`
   z-index: -1;
   min-width: 100vw;
   min-height: 100vh;
-  background: linear-gradient(270deg, #000000, #d8d8d8);
+  background: linear-gradient(270deg, #000000, #a3a3a3);
   color: white;
   background-size: 400% 400%;
   animation: ${animationName} 10s ease infinite;
@@ -67,7 +67,7 @@ export const SamsungPhoneWrapper = styled.div`
   z-index: -1;
   min-width: 100vw;
   min-height: 100vh;
-  background: linear-gradient(270deg, #000000, #d8d8d8);
+  background: linear-gradient(270deg, #000000, #a3a3a3);
   color: white;
   background-size: 400% 400%;
   animation: ${animationName} 10s ease infinite;
@@ -87,6 +87,7 @@ export const WhichPhoneLogo = styled.img`
 
 export const HeaderText = styled.div`
   margin-bottom: 1rem;
+  text-align: center;
   font-weight: 500;
   font-size: larger;
 `;

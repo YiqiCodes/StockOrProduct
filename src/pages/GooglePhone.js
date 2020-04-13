@@ -22,8 +22,8 @@ const GooglePhone = () => {
   const [currentGoogleValue, setGoogleCurrentValue] = useState(0);
   const [gainLossGoogle, setGainLossGoogle] = useState(0);
   const [isClickedGoogle, setIsClickedGoogleGoogle] = useState(0);
+  const [isValid, setIsValid] = useState(0);
 
-  // NEED TO REFACTOR THIS
   const getStockPrice = (stockRecords) => {
     let stockPrice;
     for (let stockYear of stockRecords) {
@@ -39,22 +39,26 @@ const GooglePhone = () => {
     setGooglePhoneCost(event.target.value);
   };
 
-  // net to set error handler here
   const handleYearChange = (event) => {
-    // if (event.target.value <= 2019 && event.target.value >= 20Google09)
     setGoogleYearBought(event.target.value);
   };
 
   const handleSubmit = (event) => {
-    let sharesBought = (googlePhoneCost / originalGooglePrice).toFixed(2);
-    let currentWorth = (sharesBought * googlePrice).toFixed(2);
-    let currentGain = (currentWorth - googlePhoneCost).toFixed(2);
+    if (yearGoogleBought >= 2009 && yearGoogleBought <= 2019) {
+      let sharesBought = (googlePhoneCost / originalGooglePrice).toFixed(2);
+      let currentWorth = (sharesBought * googlePrice).toFixed(2);
+      let currentGain = (currentWorth - googlePhoneCost).toFixed(2);
 
-    setGoogleCurrentValue(currentWorth);
-    setGoogleShares(sharesBought);
-    setGainLossGoogle(currentGain);
-    setIsClickedGoogleGoogle(1);
-    event.preventDefault();
+      setGoogleCurrentValue(currentWorth);
+      setGoogleShares(sharesBought);
+      setGainLossGoogle(currentGain);
+      setIsClickedGoogleGoogle(1);
+      setIsValid(0);
+      event.preventDefault();
+    } else {
+      setIsValid(1);
+      event.preventDefault();
+    }
   };
 
   axios
@@ -84,6 +88,9 @@ const GooglePhone = () => {
             placeholder="Enter Year of Purchase"
             onChange={handleYearChange}
           />
+          {isValid === 0 ? null : (
+            <div>Please enter a year between 2009-2019!</div>
+          )}
           <CostYearInput
             placeholder="Enter Purchase Cost"
             onChange={handlePhoneChange}
@@ -92,6 +99,7 @@ const GooglePhone = () => {
             Submit
           </SubmitButton>
         </PhoneForm>
+
         {isClickedGoogle === 1 ? (
           <TextOutPutContainer>
             <TextOutputIndividual>
