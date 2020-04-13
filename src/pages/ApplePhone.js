@@ -108,7 +108,7 @@ const ApplePhone = () => {
         <PhoneLogo src={appleLogo} alt=""></PhoneLogo>
         <PhoneForm onSubmit={handleSubmit}>
           <CostYearInput
-            style={{ borderColor: "#f48fb1" }}
+            style={{ borderColor: "#139b01" }}
             placeholder="Enter Year of Purchase"
             onChange={handleYearChange}
           />
@@ -116,7 +116,7 @@ const ApplePhone = () => {
             <div>Please enter a year between 2009-2019!</div>
           ) : null}
           <CostYearInput
-            style={{ borderColor: "#f48fb1" }}
+            style={{ borderColor: "#139b01" }}
             placeholder="Enter Purchase Cost"
             onChange={handlePhoneChange}
           />
@@ -125,7 +125,7 @@ const ApplePhone = () => {
           ) : null}
           <SubmitButton
             style={{
-              background: "#f48fb1",
+              background: "#139b01",
               color: "white",
             }}
             type="submit"

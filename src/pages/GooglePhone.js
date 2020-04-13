@@ -15,19 +15,20 @@ import googleLogo from "../../src/assets/img/GoogleLogo.png";
 
 const GooglePhone = () => {
   const [googlePrice, setGooglePrice] = useState(0);
-  const [originalGooglePrice, setOriginalGooglePrice] = useState(0);
-  const [googlePhoneCost, setGooglePhoneCost] = useState(0);
-  const [yearGoogleBought, setGoogleYearBought] = useState(0);
-  const [sharesGoogle, setGoogleShares] = useState(0);
-  const [currentGoogleValue, setGoogleCurrentValue] = useState(0);
+  const [originalPriceGoogle, setOriginalPriceGoogle] = useState(0);
+  const [googlePhoneCost, setPhoneCostGoogle] = useState(0);
+  const [yearBoughtGoogle, setYearBoughtGoogle] = useState(0);
+  const [sharesGoogle, setSharesGoogle] = useState(0);
+  const [currentValueGoogle, setCurrentValueGoogle] = useState(0);
   const [gainLossGoogle, setGainLossGoogle] = useState(0);
-  const [isClickedGoogle, setIsClickedGoogleGoogle] = useState(0);
-  const [isValid, setIsValid] = useState(0);
+  const [isClickedGoogle, setIsClickedGoogle] = useState(0);
+  const [isCostValid, setIsCostValid] = useState(true);
+  const [isYearValid, setIsYearValid] = useState(true);
 
   const getStockPrice = (stockRecords) => {
     let stockPrice;
     for (let stockYear of stockRecords) {
-      if (stockYear.date.includes(yearGoogleBought.toString())) {
+      if (stockYear.date.includes(yearBoughtGoogle.toString())) {
         stockPrice = stockYear["Stock Price"];
         break;
       }
@@ -36,27 +37,48 @@ const GooglePhone = () => {
   };
 
   const handlePhoneChange = (event) => {
-    setGooglePhoneCost(event.target.value);
+    setPhoneCostGoogle(event.target.value);
   };
 
   const handleYearChange = (event) => {
-    setGoogleYearBought(event.target.value);
+    setYearBoughtGoogle(event.target.value);
   };
 
   const handleSubmit = (event) => {
-    if (yearGoogleBought >= 2009 && yearGoogleBought <= 2019) {
-      let sharesBought = (googlePhoneCost / originalGooglePrice).toFixed(2);
+    if (
+      yearBoughtGoogle >= 2009 &&
+      yearBoughtGoogle <= 2019 &&
+      googlePhoneCost > 0
+    ) {
+      let sharesBought = (googlePhoneCost / originalPriceGoogle).toFixed(2);
       let currentWorth = (sharesBought * googlePrice).toFixed(2);
       let currentGain = (currentWorth - googlePhoneCost).toFixed(2);
 
-      setGoogleCurrentValue(currentWorth);
-      setGoogleShares(sharesBought);
+      setCurrentValueGoogle(currentWorth);
+      setSharesGoogle(sharesBought);
       setGainLossGoogle(currentGain);
-      setIsClickedGoogleGoogle(1);
-      setIsValid(0);
+      setIsClickedGoogle(1);
+      setIsCostValid(true);
+      setIsYearValid(true);
+      event.preventDefault();
+    } else if (
+      googlePhoneCost <= 0 &&
+      yearBoughtGoogle >= 2009 &&
+      yearBoughtGoogle <= 2019
+    ) {
+      setIsCostValid(false);
+      setIsYearValid(true);
+      event.preventDefault();
+    } else if (
+      (yearBoughtGoogle < 2009 || yearBoughtGoogle > 2019) &&
+      googlePhoneCost > 0
+    ) {
+      setIsCostValid(true);
+      setIsYearValid(false);
       event.preventDefault();
     } else {
-      setIsValid(1);
+      setIsCostValid(false);
+      setIsYearValid(false);
       event.preventDefault();
     }
   };
@@ -73,7 +95,7 @@ const GooglePhone = () => {
   axios
     .get("https://financialmodelingprep.com/api/v3/enterprise-value/GOOGL")
     .then((response) => {
-      setOriginalGooglePrice(getStockPrice(response.data.enterpriseValues));
+      setOriginalPriceGoogle(getStockPrice(response.data.enterpriseValues));
     })
     .catch((error) => {
       console.log(error);
@@ -88,13 +110,16 @@ const GooglePhone = () => {
             placeholder="Enter Year of Purchase"
             onChange={handleYearChange}
           />
-          {isValid === 0 ? null : (
+          {isYearValid === false ? (
             <div>Please enter a year between 2009-2019!</div>
-          )}
+          ) : null}
           <CostYearInput
             placeholder="Enter Purchase Cost"
             onChange={handlePhoneChange}
           />
+          {isCostValid === false ? (
+            <div>Please enter a positive value!</div>
+          ) : null}
           <SubmitButton type="submit" value="Submit">
             Submit
           </SubmitButton>
@@ -106,14 +131,14 @@ const GooglePhone = () => {
               Current Stock Price: ${googlePrice}
             </TextOutputIndividual>
             <TextOutputIndividual>
-              Stock Price in {yearGoogleBought}: ${originalGooglePrice}
+              Stock Price in {yearBoughtGoogle}: ${originalPriceGoogle}
             </TextOutputIndividual>
             <br></br>
             <TextOutputIndividual>
               You Could Have Bought: {sharesGoogle} Shares
             </TextOutputIndividual>
             <TextOutputIndividual>
-              Those Shares Are Now Worth: ${currentGoogleValue}
+              Those Shares Are Now Worth: ${currentValueGoogle}
             </TextOutputIndividual>
             <br></br>
             <TextOutputIndividual>

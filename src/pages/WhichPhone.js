@@ -19,7 +19,7 @@ import samsungLogo from "../../src/assets/img/SamsungLogo.png";
 const WhichPhone = () => {
   const [selectedPhone, setSelectedPhone] = useState(0);
   const [buttonApple, setButtonApple] = useState({
-    color: "linear-gradient(45deg, #ec407a 30%, #f48fb1 90%)",
+    color: "linear-gradient(45deg, #0d7400 30%, #9dff90 90%)",
   });
 
   const [buttonGoogle, setButtonGoogle] = useState({
@@ -31,7 +31,6 @@ const WhichPhone = () => {
   });
 
   const styledButton = {
-    background: "linear-gradient(45deg, #ec407a 30%, #f48fb1 90%)",
     borderRadius: 12,
     border: 0,
     color: "white",
@@ -69,13 +68,13 @@ const WhichPhone = () => {
                 onMouseLeave={() =>
                   setButtonApple({
                     ...buttonApple,
-                    color: "linear-gradient(45deg, #ec407a 30%, #f48fb1 90%)",
+                    color: "linear-gradient(45deg, #0d7400 30%, #9dff90 90%)",
                   })
                 }
                 onMouseOver={() =>
                   setButtonApple({
                     ...buttonApple,
-                    color: "linear-gradient(45deg, #f06292 30%, #f8bbd0 90%)",
+                    color: "linear-gradient(45deg, #139b01 30%, #bbffb3 90%)",
                   })
                 }
                 onMouseUp={() =>
@@ -107,7 +106,7 @@ const WhichPhone = () => {
                 onMouseOver={() =>
                   setButtonGoogle({
                     ...buttonGoogle,
-                    color: "linear-gradient(45deg, #ffe862 30%, #f6f3d6 90%)",
+                    color: "linear-gradient(45deg, #e6c404 30%, #f8f0aa 90%)",
                   })
                 }
                 onMouseUp={() =>
@@ -173,13 +172,13 @@ const WhichPhone = () => {
               onMouseLeave={() =>
                 setButtonApple({
                   ...buttonApple,
-                  color: "linear-gradient(45deg, #ec407a 30%, #f48fb1 90%)",
+                  color: "linear-gradient(45deg, #0d7400 30%, #9dff90 90%)",
                 })
               }
               onMouseOver={() =>
                 setButtonApple({
                   ...buttonApple,
-                  color: "linear-gradient(45deg, #f06292 30%, #f8bbd0 90%)",
+                  color: "linear-gradient(45deg, #139b01 30%, #bbffb3 90%)",
                 })
               }
               onMouseUp={() =>
@@ -211,25 +210,25 @@ const WhichPhone = () => {
                 color: "black",
               }}
               onMouseLeave={() =>
-                setButtonApple({
-                  ...buttonApple,
-                  color: "linear-gradient(45deg, #ec407a 30%, #f48fb1 90%)",
+                setButtonGoogle({
+                  ...buttonGoogle,
+                  color: "linear-gradient(45deg, #ffdc18 30%, #f6f1c1 90%)",
                 })
               }
               onMouseOver={() =>
-                setButtonApple({
-                  ...buttonApple,
-                  color: "linear-gradient(45deg, #f06292 30%, #f8bbd0 90%)",
+                setButtonGoogle({
+                  ...buttonGoogle,
+                  color: "linear-gradient(45deg, #e6c404 30%, #f8f0aa 90%)",
                 })
               }
               onMouseUp={() =>
-                setButtonApple({
-                  ...buttonApple,
+                setButtonGoogle({
+                  ...buttonGoogle,
                 })
               }
               onMouseDown={() =>
-                setButtonApple({
-                  ...buttonApple,
+                setButtonGoogle({
+                  ...buttonGoogle,
                 })
               }
               onClick={() => setSelectedPhone(0)}
@@ -250,25 +249,25 @@ const WhichPhone = () => {
                 minHeight: "40px",
               }}
               onMouseLeave={() =>
-                setButtonApple({
-                  ...buttonApple,
-                  color: "linear-gradient(45deg, #ec407a 30%, #f48fb1 90%)",
+                setButtonSamsung({
+                  ...buttonSamsung,
+                  color: "linear-gradient(45deg, #000e8d 30%, #6170fb 90%)",
                 })
               }
               onMouseOver={() =>
-                setButtonApple({
-                  ...buttonApple,
-                  color: "linear-gradient(45deg, #f06292 30%, #f8bbd0 90%)",
+                setButtonSamsung({
+                  ...buttonSamsung,
+                  color: "linear-gradient(45deg, #0116d3 30%, #9ba4f8 90%)",
                 })
               }
               onMouseUp={() =>
-                setButtonApple({
-                  ...buttonApple,
+                setButtonSamsung({
+                  ...buttonSamsung,
                 })
               }
               onMouseDown={() =>
-                setButtonApple({
-                  ...buttonApple,
+                setButtonSamsung({
+                  ...buttonSamsung,
                 })
               }
               onClick={() => setSelectedPhone(0)}
