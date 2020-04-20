@@ -13,3 +13,7 @@ https://stockorphone.netlify.com
 !["Google Phone"](https://github.com/TylerZhang00/StockOrProduct/blob/master/src/assets/screenshots/Google.png?raw=true)
 
 !["Samsung Phone"](https://github.com/TylerZhang00/StockOrProduct/blob/master/src/assets/screenshots/Samsung.png?raw=true)
+
+## Built With
+
+React, Financial Modelling Prep API
