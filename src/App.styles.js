@@ -1,13 +1,6 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 export const PageWrapper = styled.div``;
-
-// Which Phone Styles
-const animationName = keyframes`{
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
-}`;
 
 export const WhichPhoneWrapper = styled.div`
   display: flex;
@@ -17,10 +10,8 @@ export const WhichPhoneWrapper = styled.div`
   min-width: 100vw;
   min-height: 100vh;
   max-height: 100vh;
-  background: linear-gradient(270deg, #000000, #a3a3a3);
+  background: #36454f;
   color: white;
-  background-size: 400% 400%;
-  animation: ${animationName} 10s ease infinite;
 `;
 
 export const PhoneSelectorContainer = styled.div`
@@ -28,6 +19,7 @@ export const PhoneSelectorContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 100%;
 `;
 
 export const WhichPhoneLogo = styled.img`
@@ -48,6 +40,8 @@ export const PhoneContainerDiv = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  min-height: 100vh;
+  background: #36454f;
 `;
 export const PhoneLogo = styled.img`
   max-height: 25%;
@@ -94,4 +88,5 @@ export const TextOutPutContainer = styled.div`
   margin: 1rem;
   border: 2px solid;
   border-radius: 8px;
+  color: white;
 `;

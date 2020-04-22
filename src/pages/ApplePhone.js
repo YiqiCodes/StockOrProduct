@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-
+import MUButton from "@material-ui/core/Button";
+import { Link } from "react-router-dom";
 // styles
 import {
   TextOutPutContainer,
@@ -25,6 +26,24 @@ const ApplePhone = () => {
   const [isClickedApple, setIsClickedApple] = useState(0);
   const [isCostValid, setIsCostValid] = useState(true);
   const [isYearValid, setIsYearValid] = useState(true);
+  const [buttonApple, setButtonApple] = useState({
+    color: "linear-gradient(45deg, #0d7400 30%, #9dff90 90%)",
+  });
+
+  const styledButton = {
+    borderRadius: 12,
+    border: 0,
+    color: "white",
+    height: 40,
+    width: 163,
+    padding: "0 30px",
+    boxShadow: "0 3px 5px 2px #4a148c 30%",
+    minHeight: "20vh",
+    marginRight: "1em",
+    marginLeft: "1em",
+    marginTop: "10px",
+    marginBottom: "10px",
+  };
 
   const getStockPrice = (stockRecords) => {
     let stockPrice;
@@ -165,6 +184,39 @@ const ApplePhone = () => {
             </TextOutputIndividual>
           </TextOutPutContainer>
         ) : null}
+        <Link to="/">
+          <MUButton
+            style={{
+              ...styledButton,
+              background: buttonApple.color,
+              minHeight: "40px",
+            }}
+            onMouseLeave={() =>
+              setButtonApple({
+                ...buttonApple,
+                color: "linear-gradient(45deg, #0d7400 30%, #9dff90 90%)",
+              })
+            }
+            onMouseOver={() =>
+              setButtonApple({
+                ...buttonApple,
+                color: "linear-gradient(45deg, #139b01 30%, #bbffb3 90%)",
+              })
+            }
+            onMouseUp={() =>
+              setButtonApple({
+                ...buttonApple,
+              })
+            }
+            onMouseDown={() =>
+              setButtonApple({
+                ...buttonApple,
+              })
+            }
+          >
+            Go Back
+          </MUButton>
+        </Link>
       </PhoneContainerDiv>
     </>
   );

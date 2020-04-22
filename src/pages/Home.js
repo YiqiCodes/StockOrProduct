@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import ApplePhone from "./ApplePhone";
-import GooglePhone from "./GooglePhone";
-import SamsungPhone from "./SamsungPhone";
+import { Link } from "react-router-dom";
 import MUButton from "@material-ui/core/Button";
+
 import {
   PhoneSelectorContainer,
   WhichPhoneWrapper,
@@ -12,10 +11,8 @@ import {
 import appleLogo from "../../src/assets/img/AppleLogo.svg";
 import googleLogo from "../../src/assets/img/GoogleLogo.png";
 import samsungLogo from "../../src/assets/img/SamsungLogo.png";
-import PhoneSelector from "./PhoneSelector";
 
 const Home = () => {
-  const [selectedPhone, setSelectedPhone] = useState(0);
   const [buttonApple, setButtonApple] = useState({
     color: "linear-gradient(45deg, #0d7400 30%, #9dff90 90%)",
   });
@@ -45,127 +42,21 @@ const Home = () => {
 
   return (
     <>
-      {selectedPhone === 0 ? (
-        <>
-          <WhichPhoneWrapper>
-            <PhoneSelectorContainer>
-              <HeaderText>
-                Should you have bought your phone or stock from your phone
-                company?
-                <br></br>
-                Let's find out!
-                <br></br>
-                <br></br>
-                What brand is your Phone?
-              </HeaderText>
-              <MUButton
-                style={{
-                  ...styledButton,
-                  background: buttonApple.color,
-                }}
-                onMouseLeave={() =>
-                  setButtonApple({
-                    ...buttonApple,
-                    color: "linear-gradient(45deg, #0d7400 30%, #9dff90 90%)",
-                  })
-                }
-                onMouseOver={() =>
-                  setButtonApple({
-                    ...buttonApple,
-                    color: "linear-gradient(45deg, #139b01 30%, #bbffb3 90%)",
-                  })
-                }
-                onMouseUp={() =>
-                  setButtonApple({
-                    ...buttonApple,
-                  })
-                }
-                onMouseDown={() =>
-                  setButtonApple({
-                    ...buttonApple,
-                  })
-                }
-                onClick={() => setSelectedPhone(1)}
-              >
-                <WhichPhoneLogo src={appleLogo} alt=""></WhichPhoneLogo>
-              </MUButton>
-
-              <MUButton
-                style={{
-                  ...styledButton,
-                  background: buttonGoogle.color,
-                }}
-                onMouseLeave={() =>
-                  setButtonGoogle({
-                    ...buttonGoogle,
-                    color: "linear-gradient(45deg, #ffdc18 30%, #f6f1c1 90%)",
-                  })
-                }
-                onMouseOver={() =>
-                  setButtonGoogle({
-                    ...buttonGoogle,
-                    color: "linear-gradient(45deg, #e6c404 30%, #f8f0aa 90%)",
-                  })
-                }
-                onMouseUp={() =>
-                  setButtonGoogle({
-                    ...buttonGoogle,
-                  })
-                }
-                onMouseDown={() =>
-                  setButtonGoogle({
-                    ...buttonGoogle,
-                  })
-                }
-                onClick={() => setSelectedPhone(2)}
-              >
-                <WhichPhoneLogo src={googleLogo} alt=""></WhichPhoneLogo>
-              </MUButton>
-
-              <MUButton
-                style={{
-                  ...styledButton,
-                  background: buttonSamsung.color,
-                }}
-                onMouseLeave={() =>
-                  setButtonSamsung({
-                    ...buttonSamsung,
-                    color: "linear-gradient(45deg, #000e8d 30%, #6170fb 90%)",
-                  })
-                }
-                onMouseOver={() =>
-                  setButtonSamsung({
-                    ...buttonSamsung,
-                    color: "linear-gradient(45deg, #0116d3 30%, #9ba4f8 90%)",
-                  })
-                }
-                onMouseUp={() =>
-                  setButtonSamsung({
-                    ...buttonSamsung,
-                  })
-                }
-                onMouseDown={() =>
-                  setButtonSamsung({
-                    ...buttonSamsung,
-                  })
-                }
-                onClick={() => setSelectedPhone(3)}
-              >
-                <WhichPhoneLogo src={samsungLogo} alt=""></WhichPhoneLogo>
-              </MUButton>
-            </PhoneSelectorContainer>
-          </WhichPhoneWrapper>
-        </>
-      ) : null}
-      {selectedPhone === 1 ? (
-        <>
-          <WhichPhoneWrapper>
-            <ApplePhone></ApplePhone>
+      <WhichPhoneWrapper>
+        <PhoneSelectorContainer>
+          <HeaderText>
+            Should you have bought your phone or stock from your phone company?
+            <br></br>
+            Let's find out!
+            <br></br>
+            <br></br>
+            What brand is your Phone?
+          </HeaderText>
+          <Link to="/apple">
             <MUButton
               style={{
                 ...styledButton,
                 background: buttonApple.color,
-                minHeight: "40px",
               }}
               onMouseLeave={() =>
                 setButtonApple({
@@ -189,23 +80,16 @@ const Home = () => {
                   ...buttonApple,
                 })
               }
-              onClick={() => setSelectedPhone(0)}
             >
-              Go Back
+              <WhichPhoneLogo src={appleLogo} alt=""></WhichPhoneLogo>
             </MUButton>
-          </WhichPhoneWrapper>
-        </>
-      ) : null}
-      {selectedPhone === 2 ? (
-        <>
-          <WhichPhoneWrapper>
-            <GooglePhone></GooglePhone>
+          </Link>
+
+          <Link to="/google">
             <MUButton
               style={{
                 ...styledButton,
                 background: buttonGoogle.color,
-                minHeight: "40px",
-                color: "black",
               }}
               onMouseLeave={() =>
                 setButtonGoogle({
@@ -229,22 +113,16 @@ const Home = () => {
                   ...buttonGoogle,
                 })
               }
-              onClick={() => setSelectedPhone(0)}
             >
-              Go Back
+              <WhichPhoneLogo src={googleLogo} alt=""></WhichPhoneLogo>
             </MUButton>
-          </WhichPhoneWrapper>
-        </>
-      ) : null}
-      {selectedPhone === 3 ? (
-        <>
-          <WhichPhoneWrapper>
-            <PhoneSelector></PhoneSelector>
+          </Link>
+
+          <Link to="/samsung">
             <MUButton
               style={{
                 ...styledButton,
                 background: buttonSamsung.color,
-                minHeight: "40px",
               }}
               onMouseLeave={() =>
                 setButtonSamsung({
@@ -268,13 +146,12 @@ const Home = () => {
                   ...buttonSamsung,
                 })
               }
-              onClick={() => setSelectedPhone(0)}
             >
-              Go Back
+              <WhichPhoneLogo src={samsungLogo} alt=""></WhichPhoneLogo>
             </MUButton>
-          </WhichPhoneWrapper>
-        </>
-      ) : null}
+          </Link>
+        </PhoneSelectorContainer>
+      </WhichPhoneWrapper>
     </>
   );
 };

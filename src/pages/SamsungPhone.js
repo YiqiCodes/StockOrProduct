@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-
+import { Link } from "react-router-dom";
+import MUButton from "@material-ui/core/Button";
 // styles
 import {
   TextOutPutContainer,
@@ -24,7 +25,23 @@ const SamsungPhone = () => {
   const [isClickedSamsung, setIsClickedSamsung] = useState(0);
   const [isCostValid, setIsCostValid] = useState(true);
   const [isYearValid, setIsYearValid] = useState(true);
-
+  const [buttonSamsung, setButtonSamsung] = useState({
+    color: "linear-gradient(45deg, #000e8d 30%, #6170fb 90%)",
+  });
+  const styledButton = {
+    borderRadius: 12,
+    border: 0,
+    color: "white",
+    height: 40,
+    width: 163,
+    padding: "0 30px",
+    boxShadow: "0 3px 5px 2px #4a148c 30%",
+    minHeight: "20vh",
+    marginRight: "1em",
+    marginLeft: "1em",
+    marginTop: "10px",
+    marginBottom: "10px",
+  };
   const getStockPrice = (stockRecords) => {
     let stockPrice;
     for (let stockYear of stockRecords) {
@@ -168,6 +185,39 @@ const SamsungPhone = () => {
             </TextOutputIndividual>
           </TextOutPutContainer>
         ) : null}
+        <Link to="/">
+          <MUButton
+            style={{
+              ...styledButton,
+              background: buttonSamsung.color,
+              minHeight: "40px",
+            }}
+            onMouseLeave={() =>
+              setButtonSamsung({
+                ...buttonSamsung,
+                color: "linear-gradient(45deg, #000e8d 30%, #6170fb 90%)",
+              })
+            }
+            onMouseOver={() =>
+              setButtonSamsung({
+                ...buttonSamsung,
+                color: "linear-gradient(45deg, #0116d3 30%, #9ba4f8 90%)",
+              })
+            }
+            onMouseUp={() =>
+              setButtonSamsung({
+                ...buttonSamsung,
+              })
+            }
+            onMouseDown={() =>
+              setButtonSamsung({
+                ...buttonSamsung,
+              })
+            }
+          >
+            Go Back
+          </MUButton>
+        </Link>
       </PhoneContainerDiv>
     </>
   );
