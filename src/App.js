@@ -1,16 +1,11 @@
 import React from "react";
-import "./App.css";
-
 import { Route, Switch } from "react-router-dom";
 
 // Components
-import { PageWrapper } from "./App.styles";
-
-// Pages
 import Home from "./pages/Home";
-import ApplePhone from "./pages/ApplePhone";
-import GooglePhone from "./pages/GooglePhone";
-import SamsungPhone from "./pages/SamsungPhone";
+import PhoneSelector from "./pages/PhoneSelector";
+import { phoneDetails } from "./pages/PhoneHelpers";
+import { PageWrapper } from "./App.styles";
 
 const App = () => {
   return (
@@ -20,17 +15,23 @@ const App = () => {
         <Route
           exact
           path="/apple"
-          render={() => <ApplePhone></ApplePhone>}
+          render={() => (
+            <PhoneSelector phoneKey={phoneDetails.apple}></PhoneSelector>
+          )}
         ></Route>
         <Route
           exact
           path="/google"
-          render={() => <GooglePhone></GooglePhone>}
+          render={() => (
+            <PhoneSelector phoneKey={phoneDetails.google}></PhoneSelector>
+          )}
         ></Route>
         <Route
           exact
           path="/samsung"
-          render={() => <SamsungPhone></SamsungPhone>}
+          render={() => (
+            <PhoneSelector phoneKey={phoneDetails.samsung}></PhoneSelector>
+          )}
         ></Route>
       </Switch>
     </PageWrapper>
