@@ -6,13 +6,13 @@ https://stockorphone.netlify.com
 
 ## Screenshots
 
-!["Landing Page"](https://github.com/TylerZhang00/StockOrProduct/blob/master/src/assets/screenshots/MainPage.png?raw=true)
+!["Landing Page"](https://github.com/TylerZhang00/StockOrPhone/blob/master/src/assets/screenshots/MainPage1.png?raw=true)
 
-!["Apple Phone"](https://github.com/TylerZhang00/StockOrProduct/blob/master/src/assets/screenshots/Apple.png?raw=true)
+!["Apple Phone"](https://github.com/TylerZhang00/StockOrPhone/blob/master/src/assets/screenshots/Apple1.png?raw=true)
 
-!["Google Phone"](https://github.com/TylerZhang00/StockOrProduct/blob/master/src/assets/screenshots/Google.png?raw=true)
+!["Google Phone"](https://github.com/TylerZhang00/StockOrPhone/blob/master/src/assets/screenshots/Google1.png?raw=true)
 
-!["Samsung Phone"](https://github.com/TylerZhang00/StockOrProduct/blob/master/src/assets/screenshots/Samsung.png?raw=true)
+!["Samsung Phone"](https://github.com/TylerZhang00/StockOrPhone/blob/master/src/assets/screenshots/Samsung1.png?raw=true)
 
 ## Built With
 
