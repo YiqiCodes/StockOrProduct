@@ -1,13 +1,6 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 export const PageWrapper = styled.div``;
-
-// Which Phone Styles
-const animationName = keyframes`{
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
-}`;
 
 export const WhichPhoneWrapper = styled.div`
   display: flex;
@@ -17,10 +10,8 @@ export const WhichPhoneWrapper = styled.div`
   min-width: 100vw;
   min-height: 100vh;
   max-height: 100vh;
-  background: linear-gradient(270deg, #000000, #a3a3a3);
+  background: #36454f;
   color: white;
-  background-size: 400% 400%;
-  animation: ${animationName} 10s ease infinite;
 `;
 
 export const PhoneSelectorContainer = styled.div`
@@ -28,6 +19,7 @@ export const PhoneSelectorContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 100%;
 `;
 
 export const WhichPhoneLogo = styled.img`
@@ -48,12 +40,12 @@ export const PhoneContainerDiv = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  min-height: 100vh;
+  background: #36454f;
 `;
 export const PhoneLogo = styled.img`
-  max-height: 25%;
-  max-width: 25%;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
+  max-height: 5rem;
+  margin: 1rem 0rem;
 `;
 
 export const PhoneForm = styled.form`
@@ -66,7 +58,7 @@ export const CostYearInput = styled.input`
   margin: 1rem;
   min-width: 100%;
   min-height: 100%;
-  border: solid 2px #f6f1c1;
+  border: solid 2px #9c8479;
   border-radius: 8px;
   background: #e9e9e9;
   text-align: center;
@@ -76,11 +68,22 @@ export const CostYearInput = styled.input`
 export const SubmitButton = styled.button`
   min-height: 2rem;
   min-width: 5rem;
-  border: solid 2px white;
-  background: #f6f1c1;
+  border: solid 1px white;
+  background: #4f403a;
   border-radius: 5px;
   margin: 1rem;
-  color: black;
+  color: white;
+`;
+
+export const GoBackButton = styled.button`
+  width: 10rem;
+  padding: 0 30px;
+  min-height: 40px;
+  margin: 1rem;
+  color: white;
+  background: #9c8479;
+  border-radius: 10px;
+  border: 1px solid white;
 `;
 
 export const TextOutputIndividual = styled.div`
@@ -94,4 +97,9 @@ export const TextOutPutContainer = styled.div`
   margin: 1rem;
   border: 2px solid;
   border-radius: 8px;
+  color: white;
+`;
+
+export const ErrorText = styled.div`
+  color: red;
 `;
