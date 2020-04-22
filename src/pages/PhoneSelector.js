@@ -122,17 +122,17 @@ const PhoneSelector = (props) => {
         {isClicked === true ? (
           <TextOutPutContainer>
             <TextOutputIndividual>
-              Current Stock Price: ${price}
+              Current stock price: ${price}
               <br></br>
-              Stock Price in {yearBought}: ${originalPrice}
-              <br></br>
-              <br></br>
-              You Could Have Bought: {shares} Shares
-              <br></br>
-              Those Shares Are Now Worth: ${currentValue}
+              Stock price in {yearBought}: ${originalPrice}
               <br></br>
               <br></br>
-              If you bought Stock instead of the phone, <br></br>
+              You could have bought: {shares} Shares
+              <br></br>
+              Those shares are now worth: ${currentValue}
+              <br></br>
+              <br></br>
+              If you bought stock instead of the phone, <br></br>
               your Gain(Loss) would be: ${gainLoss}
               <br></br>
             </TextOutputIndividual>

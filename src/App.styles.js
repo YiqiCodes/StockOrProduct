@@ -22,9 +22,18 @@ export const PhoneSelectorContainer = styled.div`
   height: 100%;
 `;
 
+export const PhoneLogoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 60vh;
+  width: 100%;
+`;
+
 export const WhichPhoneLogo = styled.img`
-  max-height: 50%;
-  max-width: 100%;
+  max-height: 10rem;
+  max-width: 10rem;
 `;
 
 export const HeaderText = styled.div`
