@@ -11,62 +11,12 @@ const animationName = keyframes`{
 
 export const WhichPhoneWrapper = styled.div`
   display: flex;
-  flex: 1;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  z-index: -1;
   min-width: 100vw;
   min-height: 100vh;
   max-height: 100vh;
-  background: linear-gradient(270deg, #000000, #a3a3a3);
-  color: white;
-  background-size: 400% 400%;
-  animation: ${animationName} 10s ease infinite;
-`;
-
-export const ApplePhoneWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  align-items: center;
-  justify-content: space-around;
-  position: absolute;
-  z-index: -1;
-  min-width: 100vw;
-  min-height: 100vh;
-  background: linear-gradient(270deg, #000000, #a3a3a3);
-  color: white;
-  background-size: 400% 400%;
-  animation: ${animationName} 10s ease infinite;
-`;
-
-export const GooglePhoneWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  align-items: center;
-  justify-content: space-around;
-  position: absolute;
-  z-index: -1;
-  min-width: 100vw;
-  min-height: 100vh;
-  background: linear-gradient(270deg, #000000, #a3a3a3);
-  color: white;
-  background-size: 400% 400%;
-  animation: ${animationName} 10s ease infinite;
-`;
-
-export const SamsungPhoneWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  align-items: center;
-  justify-content: space-around;
-  position: absolute;
-  z-index: -1;
-  min-width: 100vw;
-  min-height: 100vh;
   background: linear-gradient(270deg, #000000, #a3a3a3);
   color: white;
   background-size: 400% 400%;

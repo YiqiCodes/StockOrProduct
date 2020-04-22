@@ -6,15 +6,13 @@ import MUButton from "@material-ui/core/Button";
 import {
   PhoneSelectorContainer,
   WhichPhoneWrapper,
-  ApplePhoneWrapper,
-  GooglePhoneWrapper,
-  SamsungPhoneWrapper,
   WhichPhoneLogo,
   HeaderText,
 } from "../App.styles";
 import appleLogo from "../../src/assets/img/AppleLogo.svg";
 import googleLogo from "../../src/assets/img/GoogleLogo.png";
 import samsungLogo from "../../src/assets/img/SamsungLogo.png";
+import PhoneSelector from "./PhoneSelector";
 
 const Home = () => {
   const [selectedPhone, setSelectedPhone] = useState(0);
@@ -161,7 +159,7 @@ const Home = () => {
       ) : null}
       {selectedPhone === 1 ? (
         <>
-          <ApplePhoneWrapper>
+          <WhichPhoneWrapper>
             <ApplePhone></ApplePhone>
             <MUButton
               style={{
@@ -195,12 +193,12 @@ const Home = () => {
             >
               Go Back
             </MUButton>
-          </ApplePhoneWrapper>
+          </WhichPhoneWrapper>
         </>
       ) : null}
       {selectedPhone === 2 ? (
         <>
-          <GooglePhoneWrapper>
+          <WhichPhoneWrapper>
             <GooglePhone></GooglePhone>
             <MUButton
               style={{
@@ -235,13 +233,13 @@ const Home = () => {
             >
               Go Back
             </MUButton>
-          </GooglePhoneWrapper>
+          </WhichPhoneWrapper>
         </>
       ) : null}
       {selectedPhone === 3 ? (
         <>
-          <SamsungPhoneWrapper>
-            <SamsungPhone></SamsungPhone>
+          <WhichPhoneWrapper>
+            <PhoneSelector></PhoneSelector>
             <MUButton
               style={{
                 ...styledButton,
@@ -274,7 +272,7 @@ const Home = () => {
             >
               Go Back
             </MUButton>
-          </SamsungPhoneWrapper>
+          </WhichPhoneWrapper>
         </>
       ) : null}
     </>
