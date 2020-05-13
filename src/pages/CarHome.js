@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import {
-  PhoneSelectorContainer,
+  ProductSelectorContainer,
   CarLogoContainer,
   WhichPhoneWrapper,
   WhichCarLogo,
@@ -19,7 +19,7 @@ const Home = () => {
   return (
     <>
       <WhichPhoneWrapper>
-        <PhoneSelectorContainer>
+        <ProductSelectorContainer>
           <HeaderText>What brand is your Car?</HeaderText>
           <CarLogoContainer>
             <Link to="/cars/toyota">
@@ -41,7 +41,7 @@ const Home = () => {
               <OtherText>Other</OtherText>
             </Link>
           </CarLogoContainer>
-        </PhoneSelectorContainer>
+        </ProductSelectorContainer>
       </WhichPhoneWrapper>
     </>
   );

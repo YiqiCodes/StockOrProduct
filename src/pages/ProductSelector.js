@@ -9,9 +9,9 @@ import {
   CostYearInput,
   SubmitButton,
   GoBackButton,
-  // PhoneLogo,
-  // PhoneForm,
-  // PhoneContainerDiv,
+  ProductLogo,
+  ProductForm,
+  ProductContainerDiv,
   ErrorText,
 } from "../App.styles";
 
@@ -78,7 +78,7 @@ const PhoneSelector = (props) => {
 
   //Fetch current stock price
   axios
-    .get(props.phoneKey.setPriceAPI)
+    .get(props.productKey.setPriceAPI)
     .then((response) => {
       setPrice(response.data.profile.price);
     })
@@ -88,7 +88,7 @@ const PhoneSelector = (props) => {
 
   //Fetch original stock price
   axios
-    .get(props.phoneKey.setOriginalPriceAPI)
+    .get(props.productKey.setOriginalPriceAPI)
     .then((response) => {
       setOriginalPrice(getStockPrice(response.data.enterpriseValues));
     })
@@ -98,9 +98,9 @@ const PhoneSelector = (props) => {
 
   return (
     <>
-      <PhoneContainerDiv>
-        <PhoneLogo src={props.phoneKey.logo} alt=""></PhoneLogo>
-        <PhoneForm onSubmit={handleSubmit}>
+      <ProductContainerDiv>
+        <ProductLogo src={props.productKey.logo} alt=""></ProductLogo>
+        <ProductForm onSubmit={handleSubmit}>
           <CostYearInput
             placeholder="Enter Year of Purchase"
             onChange={handleYearChange}
@@ -115,10 +115,12 @@ const PhoneSelector = (props) => {
           {isCostValid === false ? (
             <ErrorText>Please enter a positive value!</ErrorText>
           ) : null}
+          {/* <Link to="/cars"> */}
           <SubmitButton type="submit" value="Submit">
             Submit
           </SubmitButton>
-        </PhoneForm>
+          {/* </Link> */}
+        </ProductForm>
         {isClicked === true ? (
           <TextOutPutContainer>
             <TextOutputIndividual>
@@ -132,7 +134,7 @@ const PhoneSelector = (props) => {
               Those shares are now worth: ${currentValue}
               <br></br>
               <br></br>
-              If you bought stock instead of the phone, <br></br>
+              If you bought stock instead of the product, <br></br>
               your Gain(Loss) would be: ${gainLoss}
               <br></br>
             </TextOutputIndividual>
@@ -142,17 +144,18 @@ const PhoneSelector = (props) => {
             >
               {gainLoss > 0
                 ? `You would have made more money buying stock. Was your
-                    phone worth $${gainLoss}?`
-                : "Seems like you made the right choice buying the phone!"}
+                    product worth $${gainLoss}?`
+                : "Seems like you made the right choice buying the product!"}
             </TextOutputIndividual>
             <br></br>
-            {props.phoneKey.logo.includes("Samsung") ? (
+            {console.log("test", props.productKey)}
+            {props.productKey.setPriceAPI.includes("NDAQ") ? (
               <>
                 <TextOutputIndividual
                   style={{ fontWeight: 100, fontSize: "small" }}
                 >
-                  * The NASDAQ Composite was used as a proxy as Samsung is not
-                  traded on North American Markets.
+                  * The NASDAQ Composite was used as a proxy as this company is
+                  not traded on North American Markets.
                 </TextOutputIndividual>
               </>
             ) : null}
@@ -161,7 +164,10 @@ const PhoneSelector = (props) => {
         <Link to="/">
           <GoBackButton>Go Back</GoBackButton>
         </Link>
-      </PhoneContainerDiv>
+        <Link to="/cars">
+          <GoBackButton>Next</GoBackButton>
+        </Link>
+      </ProductContainerDiv>
     </>
   );
 };

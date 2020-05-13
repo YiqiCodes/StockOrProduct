@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import {
-  PhoneSelectorContainer,
+  ProductSelectorContainer,
   PhoneLogoContainer,
   WhichPhoneWrapper,
   WhichPhoneLogo,
@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <>
       <WhichPhoneWrapper>
-        <PhoneSelectorContainer>
+        <ProductSelectorContainer>
           <HeaderText>
             Should you have bought your phone or stock from your phone company?
             <br></br>
@@ -36,7 +36,7 @@ const Home = () => {
               <WhichPhoneLogo src={samsungLogo} alt=""></WhichPhoneLogo>
             </Link>
           </PhoneLogoContainer>
-        </PhoneSelectorContainer>
+        </ProductSelectorContainer>
       </WhichPhoneWrapper>
     </>
   );
