@@ -31,9 +31,23 @@ export const PhoneLogoContainer = styled.div`
   width: 100%;
 `;
 
+export const CarLogoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 80vh;
+  width: 100%;
+`;
+
 export const WhichPhoneLogo = styled.img`
   max-height: 10rem;
   max-width: 10rem;
+`;
+
+export const WhichCarLogo = styled.img`
+  max-height: 7rem;
+  max-width: 7rem;
 `;
 
 export const HeaderText = styled.div`
@@ -41,6 +55,14 @@ export const HeaderText = styled.div`
   text-align: center;
   font-weight: 500;
   font-size: larger;
+`;
+
+export const OtherText = styled.div`
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: 500;
+  font-size: larger;
+  color: white;
 `;
 
 // Phone Styles
