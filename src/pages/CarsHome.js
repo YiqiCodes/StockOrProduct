@@ -10,13 +10,14 @@ import {
   OtherText,
   ProductMainButton,
 } from "../App.styles";
+
 import toyotaLogo from "../../src/assets/img/ToyotaLogo.png";
 import hondaLogo from "../../src/assets/img/HondaLogo.png";
 import gmLogo from "../../src/assets/img/GMLogo.png";
 import fordLogo from "../../src/assets/img/FordLogo.png";
 import teslaLogo from "../../src/assets/img/TeslaLogo.png";
 
-const Home = () => {
+const CarsHome = () => {
   return (
     <>
       <WhichPhoneWrapper>
@@ -51,4 +52,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default CarsHome;

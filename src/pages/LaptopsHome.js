@@ -16,7 +16,7 @@ import microsoftLogo from "../../src/assets/img/MicrosoftLogo.png";
 import appleLogo from "../../src/assets/img/AppleLogo.svg";
 import googleLogo from "../../src/assets/img/GoogleLogo.png";
 
-const Home = () => {
+const LaptopsHome = () => {
   return (
     <>
       <WhichPhoneWrapper>
@@ -42,7 +42,7 @@ const Home = () => {
               <OtherText>Other</OtherText>
             </Link>
           </LaptopLogoContainer>
-          <Link to="/">
+          <Link to="/phones">
             <ProductMainButton style={{ margin: "5px 0px" }}>
               Back to Phones
             </ProductMainButton>
@@ -56,4 +56,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default LaptopsHome;

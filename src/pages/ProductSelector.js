@@ -160,7 +160,7 @@ const PhoneSelector = (props) => {
         ) : null}
 
         {props.productKey.type.includes("phone") ? (
-          <Link to="/">
+          <Link to="/phones">
             <GoBackButton>Back to Phones</GoBackButton>
           </Link>
         ) : null}
