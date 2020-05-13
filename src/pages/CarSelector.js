@@ -9,9 +9,9 @@ import {
   CostYearInput,
   SubmitButton,
   GoBackButton,
-  PhoneLogo,
-  PhoneForm,
-  PhoneContainerDiv,
+  // PhoneLogo,
+  // PhoneForm,
+  // PhoneContainerDiv,
   ErrorText,
 } from "../App.styles";
 
@@ -115,11 +115,9 @@ const PhoneSelector = (props) => {
           {isCostValid === false ? (
             <ErrorText>Please enter a positive value!</ErrorText>
           ) : null}
-          {/* <Link to="/cars"> */}
           <SubmitButton type="submit" value="Submit">
             Submit
           </SubmitButton>
-          {/* </Link> */}
         </PhoneForm>
         {isClicked === true ? (
           <TextOutPutContainer>
@@ -162,9 +160,6 @@ const PhoneSelector = (props) => {
         ) : null}
         <Link to="/">
           <GoBackButton>Go Back</GoBackButton>
-        </Link>
-        <Link to="/cars">
-          <GoBackButton>Next</GoBackButton>
         </Link>
       </PhoneContainerDiv>
     </>

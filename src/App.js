@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 // Components
 import Home from "./pages/Home";
 import PhoneSelector from "./pages/PhoneSelector";
+import CarHome from "./pages/CarHome";
 import { phoneDetails } from "./pages/PhoneHelpers";
 import { PageWrapper } from "./App.styles";
 
@@ -33,6 +34,7 @@ const App = () => {
             <PhoneSelector phoneKey={phoneDetails.samsung}></PhoneSelector>
           )}
         ></Route>
+        <Route exact path="/cars" render={() => <CarHome></CarHome>}></Route>
       </Switch>
     </PageWrapper>
   );
