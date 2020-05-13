@@ -14,7 +14,7 @@ export const WhichPhoneWrapper = styled.div`
   color: white;
 `;
 
-export const PhoneSelectorContainer = styled.div`
+export const ProductSelectorContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -65,8 +65,8 @@ export const OtherText = styled.div`
   color: white;
 `;
 
-// Phone Styles
-export const PhoneContainerDiv = styled.div`
+// Product Styles
+export const ProductContainerDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -74,12 +74,12 @@ export const PhoneContainerDiv = styled.div`
   min-height: 100vh;
   background: #36454f;
 `;
-export const PhoneLogo = styled.img`
+export const ProductLogo = styled.img`
   max-height: 5rem;
   margin: 1rem 0rem;
 `;
 
-export const PhoneForm = styled.form`
+export const ProductForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
