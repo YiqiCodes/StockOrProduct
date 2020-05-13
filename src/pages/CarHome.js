@@ -42,8 +42,8 @@ const Home = () => {
               <OtherText>Other</OtherText>
             </Link>
           </CarLogoContainer>
-          <Link to="/">
-            <ProductMainButton>Previous Product</ProductMainButton>
+          <Link to="/laptops">
+            <ProductMainButton>Back to Laptops</ProductMainButton>
           </Link>
         </ProductSelectorContainer>
       </WhichPhoneWrapper>

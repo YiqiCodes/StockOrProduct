@@ -115,11 +115,9 @@ const PhoneSelector = (props) => {
           {isCostValid === false ? (
             <ErrorText>Please enter a positive value!</ErrorText>
           ) : null}
-          {/* <Link to="/cars"> */}
           <SubmitButton type="submit" value="Submit">
             Submit
           </SubmitButton>
-          {/* </Link> */}
         </ProductForm>
         {isClicked === true ? (
           <TextOutPutContainer>
@@ -163,18 +161,34 @@ const PhoneSelector = (props) => {
 
         {props.productKey.type.includes("phone") ? (
           <Link to="/">
-            <GoBackButton>Go Back</GoBackButton>
+            <GoBackButton>Back to Phones</GoBackButton>
           </Link>
-        ) : (
+        ) : null}
+        {props.productKey.type.includes("laptop") ? (
+          <Link to="/laptops">
+            <GoBackButton>Back to Laptops</GoBackButton>
+          </Link>
+        ) : null}
+        {props.productKey.type.includes("car") ? (
           <Link to="/cars">
-            <GoBackButton>Go Back</GoBackButton>
+            <GoBackButton>Back to Cars</GoBackButton>
           </Link>
-        )}
-        <Link to="/cars">
-          <GoBackButton style={{ background: "#324F4B" }}>
-            Next Product
-          </GoBackButton>
-        </Link>
+        ) : null}
+
+        {props.productKey.type.includes("phone") ? (
+          <Link to="/laptops">
+            <GoBackButton style={{ background: "#324F4B" }}>
+              Next Product
+            </GoBackButton>
+          </Link>
+        ) : null}
+        {props.productKey.type.includes("laptop") ? (
+          <Link to="/cars">
+            <GoBackButton style={{ background: "#324F4B" }}>
+              Next Product
+            </GoBackButton>
+          </Link>
+        ) : null}
       </ProductContainerDiv>
     </>
   );
