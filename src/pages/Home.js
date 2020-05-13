@@ -42,7 +42,7 @@ const Home = () => {
               <OtherText>Other</OtherText>
             </Link>
           </PhoneLogoContainer>
-          <Link to="/cars">
+          <Link to="/laptops">
             <ProductMainButton>Next Product</ProductMainButton>
           </Link>
         </ProductSelectorContainer>

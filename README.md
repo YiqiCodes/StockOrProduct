@@ -1,6 +1,6 @@
 # Stock or Phone?
 
-Should you have bought your phone or stock from your phone company? Let's Find Out!
+Should you have bought that product or stock from the company? Let's Find Out!
 
 https://stockorphone.netlify.com
 

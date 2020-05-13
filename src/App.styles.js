@@ -31,6 +31,15 @@ export const PhoneLogoContainer = styled.div`
   width: 100%;
 `;
 
+export const LaptopLogoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 75vh;
+  width: 100%;
+`;
+
 export const CarLogoContainer = styled.div`
   display: flex;
   flex-direction: column;

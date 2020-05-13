@@ -3,9 +3,14 @@ import { Route, Switch } from "react-router-dom";
 
 // Components
 import Home from "./pages/Home";
+import LaptopHome from "./pages/LaptopHome";
 import CarHome from "./pages/CarHome";
 import ProductSelector from "./pages/ProductSelector";
-import { phoneDetails, carDetails } from "./pages/ProductHelpers";
+import {
+  phoneDetails,
+  laptopDetails,
+  carDetails,
+} from "./pages/ProductHelpers";
 import { PageWrapper } from "./App.styles";
 
 const App = () => {
@@ -42,6 +47,59 @@ const App = () => {
           path="/other"
           render={() => (
             <ProductSelector productKey={phoneDetails.other}></ProductSelector>
+          )}
+        ></Route>
+
+        {/* laptop routes */}
+        <Route
+          exact
+          path="/laptops"
+          render={() => <LaptopHome></LaptopHome>}
+        ></Route>
+        <Route
+          exact
+          path="/laptops/hp"
+          render={() => (
+            <ProductSelector productKey={laptopDetails.hp}></ProductSelector>
+          )}
+        ></Route>
+        <Route
+          exact
+          path="/laptops/dell"
+          render={() => (
+            <ProductSelector productKey={laptopDetails.dell}></ProductSelector>
+          )}
+        ></Route>
+        <Route
+          exact
+          path="/laptops/microsoft"
+          render={() => (
+            <ProductSelector
+              productKey={laptopDetails.microsoft}
+            ></ProductSelector>
+          )}
+        ></Route>
+        <Route
+          exact
+          path="/laptops/apple"
+          render={() => (
+            <ProductSelector productKey={laptopDetails.apple}></ProductSelector>
+          )}
+        ></Route>
+        <Route
+          exact
+          path="/laptops/google"
+          render={() => (
+            <ProductSelector
+              productKey={laptopDetails.google}
+            ></ProductSelector>
+          )}
+        ></Route>
+        <Route
+          exact
+          path="/laptops/other"
+          render={() => (
+            <ProductSelector productKey={laptopDetails.other}></ProductSelector>
           )}
         ></Route>
 
