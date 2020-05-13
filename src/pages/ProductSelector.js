@@ -148,7 +148,6 @@ const PhoneSelector = (props) => {
                 : "Seems like you made the right choice buying the product!"}
             </TextOutputIndividual>
             <br></br>
-            {console.log("test", props.productKey)}
             {props.productKey.setPriceAPI.includes("NDAQ") ? (
               <>
                 <TextOutputIndividual
@@ -161,11 +160,20 @@ const PhoneSelector = (props) => {
             ) : null}
           </TextOutPutContainer>
         ) : null}
-        <Link to="/">
-          <GoBackButton>Go Back</GoBackButton>
-        </Link>
+
+        {props.productKey.type.includes("phone") ? (
+          <Link to="/">
+            <GoBackButton>Go Back</GoBackButton>
+          </Link>
+        ) : (
+          <Link to="/cars">
+            <GoBackButton>Go Back</GoBackButton>
+          </Link>
+        )}
         <Link to="/cars">
-          <GoBackButton>Next</GoBackButton>
+          <GoBackButton style={{ background: "#324F4B" }}>
+            Next Product
+          </GoBackButton>
         </Link>
       </ProductContainerDiv>
     </>

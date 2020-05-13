@@ -37,6 +37,13 @@ const App = () => {
             ></ProductSelector>
           )}
         ></Route>
+        <Route
+          exact
+          path="/other"
+          render={() => (
+            <ProductSelector productKey={phoneDetails.other}></ProductSelector>
+          )}
+        ></Route>
 
         {/* car routes */}
         <Route exact path="/cars" render={() => <CarHome></CarHome>}></Route>
