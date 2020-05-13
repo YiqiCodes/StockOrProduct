@@ -22,6 +22,15 @@ export const ProductSelectorContainer = styled.div`
   height: 100%;
 `;
 
+export const HomeContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 40vh;
+  width: 100%;
+`;
+
 export const PhoneLogoContainer = styled.div`
   display: flex;
   flex-direction: column;

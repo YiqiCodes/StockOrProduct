@@ -3,8 +3,9 @@ import { Route, Switch } from "react-router-dom";
 
 // Components
 import Home from "./pages/Home";
-import LaptopHome from "./pages/LaptopHome";
-import CarHome from "./pages/CarHome";
+import PhonesHome from "./pages/PhonesHome";
+import LaptopHome from "./pages/LaptopsHome";
+import CarHome from "./pages/CarsHome";
 import ProductSelector from "./pages/ProductSelector";
 import {
   phoneDetails,
@@ -21,21 +22,26 @@ const App = () => {
         {/* phone routes */}
         <Route
           exact
-          path="/apple"
+          path="/phones"
+          render={() => <PhonesHome></PhonesHome>}
+        ></Route>
+        <Route
+          exact
+          path="/phones/apple"
           render={() => (
             <ProductSelector productKey={phoneDetails.apple}></ProductSelector>
           )}
         ></Route>
         <Route
           exact
-          path="/google"
+          path="/phones/google"
           render={() => (
             <ProductSelector productKey={phoneDetails.google}></ProductSelector>
           )}
         ></Route>
         <Route
           exact
-          path="/samsung"
+          path="/phones/samsung"
           render={() => (
             <ProductSelector
               productKey={phoneDetails.samsung}
@@ -44,7 +50,7 @@ const App = () => {
         ></Route>
         <Route
           exact
-          path="/other"
+          path="/phones/other"
           render={() => (
             <ProductSelector productKey={phoneDetails.other}></ProductSelector>
           )}
