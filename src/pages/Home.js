@@ -7,6 +7,8 @@ import {
   WhichPhoneWrapper,
   WhichPhoneLogo,
   HeaderText,
+  OtherText,
+  ProductMainButton,
 } from "../App.styles";
 import appleLogo from "../../src/assets/img/AppleLogo.svg";
 import googleLogo from "../../src/assets/img/GoogleLogo.png";
@@ -18,7 +20,8 @@ const Home = () => {
       <WhichPhoneWrapper>
         <ProductSelectorContainer>
           <HeaderText>
-            Should you have bought your phone or stock from your phone company?
+            Should you have bought your product or stock from that company?
+            <br></br>
             <br></br>
             Let's find out!
             <br></br>
@@ -35,7 +38,13 @@ const Home = () => {
             <Link to="/samsung">
               <WhichPhoneLogo src={samsungLogo} alt=""></WhichPhoneLogo>
             </Link>
+            <Link to="/other">
+              <OtherText>Other</OtherText>
+            </Link>
           </PhoneLogoContainer>
+          <Link to="/cars">
+            <ProductMainButton>Next Product</ProductMainButton>
+          </Link>
         </ProductSelectorContainer>
       </WhichPhoneWrapper>
     </>

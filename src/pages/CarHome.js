@@ -8,6 +8,7 @@ import {
   WhichCarLogo,
   HeaderText,
   OtherText,
+  ProductMainButton,
 } from "../App.styles";
 import toyotaLogo from "../../src/assets/img/ToyotaLogo.png";
 import hondaLogo from "../../src/assets/img/HondaLogo.png";
@@ -41,6 +42,9 @@ const Home = () => {
               <OtherText>Other</OtherText>
             </Link>
           </CarLogoContainer>
+          <Link to="/">
+            <ProductMainButton>Previous Product</ProductMainButton>
+          </Link>
         </ProductSelectorContainer>
       </WhichPhoneWrapper>
     </>

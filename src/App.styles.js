@@ -41,12 +41,12 @@ export const CarLogoContainer = styled.div`
 `;
 
 export const WhichPhoneLogo = styled.img`
-  max-height: 10rem;
+  max-height: 7rem;
   max-width: 10rem;
 `;
 
 export const WhichCarLogo = styled.img`
-  max-height: 7rem;
+  max-height: 6rem;
   max-width: 7rem;
 `;
 
@@ -63,6 +63,16 @@ export const OtherText = styled.div`
   font-weight: 500;
   font-size: larger;
   color: white;
+`;
+
+export const ProductMainButton = styled.button`
+  width: 10rem;
+  padding: 0 30px;
+  min-height: 40px;
+  color: white;
+  background: #9c8479;
+  border-radius: 10px;
+  border: 1px solid white;
 `;
 
 // Product Styles
