@@ -31,7 +31,7 @@ const PhoneSelector = (props) => {
     let stockPrice;
     for (let stockYear of stockRecords) {
       if (stockYear.date.includes(yearBought.toString())) {
-        stockPrice = stockYear["Stock Price"];
+        stockPrice = stockYear["stockPrice"];
         break;
       }
     }
@@ -80,7 +80,7 @@ const PhoneSelector = (props) => {
   axios
     .get(props.productKey.setPriceAPI)
     .then((response) => {
-      setPrice(response.data.profile.price);
+      setPrice(response.data[0].price);
     })
     .catch((error) => {
       console.log(error);
@@ -90,7 +90,7 @@ const PhoneSelector = (props) => {
   axios
     .get(props.productKey.setOriginalPriceAPI)
     .then((response) => {
-      setOriginalPrice(getStockPrice(response.data.enterpriseValues));
+      setOriginalPrice(getStockPrice(response.data));
     })
     .catch((error) => {
       console.log(error);
